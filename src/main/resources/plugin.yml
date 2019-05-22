@@ -1,0 +1,25 @@
+name: ${project.name}
+version: ${project.version}
+description: SuperElytra
+authors: [Catalin Ionescu]
+main: ${project.groupId}.${project.artifactId}.SuperElytra
+api-version: 1.13
+commands:
+  elytra:
+    description: Enables or disables super elytra mode
+    usage: /<command> [reload]
+    permission: superelytra.use
+
+permissions:
+  superelytra.*:
+    description: All SuperElytra permissions
+    default: op
+    children:
+    - superelytra.admin
+    - superelytra.use
+  superelytra.admin:
+    description: Allows access to various SuperElytra settings
+    default: op
+  superelytra.use:
+    description: Allows enabling and disabling super elytra for yourself
+    default: true
